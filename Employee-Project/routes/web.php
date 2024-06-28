@@ -12,8 +12,7 @@ Route::get('/', function () {
 });
 
 
-// Route Parameter
-
+// I - Route Parameter
 // 1. ID parametr
 Route::get('/new/{id}', function ($id) {
     return 'User New ID: ' . $id;
@@ -32,3 +31,17 @@ Route::get('/try/{name?}', function ($name = 'Guest') {
         return 'User Name: ' . $name;
     }
 });
+
+
+// II - Naming Router
+
+Route::get('/About',function(){
+    if (true){
+        return redirect()->route('About-page');
+    }
+});
+
+Route::get('/Employee-Project/Settings/About ', function(){
+    return "Naming route check";
+})->name('About-page');
+
