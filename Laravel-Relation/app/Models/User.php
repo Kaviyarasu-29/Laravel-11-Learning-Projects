@@ -28,6 +28,9 @@ class User extends Model
     // }
 
 
+
+    protected $fillable = ['name'];
+
     public function phone()
     {
         return $this->hasOne(Phone::class);

@@ -4,6 +4,7 @@ use App\Models\Phone;
 use App\Models\User;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\Configuration\Php;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -21,8 +22,8 @@ Route::get('/',function() {
 } );
 
 
-// change the value
-Route::get('/change', function() {
+// change the  phone value
+Route::get('/phoneChange', function() {
    $user = User::find(1);
    $updatePhone  = new Phone;
    $updatePhone->phone = "1234567890";
@@ -31,3 +32,12 @@ Route::get('/change', function() {
 
    return redirect('/');
 } );
+
+//  change the name value
+Route::get('/nameChange', function () {
+    $user = User::find(1);
+    $user->update(['name' => 'AWP']);
+
+    // $user->name()->update($updateName->toArray());
+    return redirect('/');
+});
