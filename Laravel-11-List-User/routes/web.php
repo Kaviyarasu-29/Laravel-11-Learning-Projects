@@ -51,3 +51,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', [NewuserController::class, 'create']);
 Route::post('/store', [NewuserController::class, 'store']);
 Route::get('/list', [NewuserController::class, 'list']);
+
+Route::redirect('/', '/home');
