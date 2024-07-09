@@ -4,35 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Phone;
+use App\Models\Salary;
 use Illuminate\Http\Request;
 
 class User extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'age'];
 
-    // public function create()
-    // {
-    //     return view('create_user');
-    // }
+    // protected $primaryKey = 'uid';
+    // public $incrementing = false;
+    // protected $keyType = 'int';
 
-
-    // // store the form data
-    // public function store(Request $request)
-    // {
-    //     $data = $request->only(['name']);
-
-    //     $newuser = Newuser::create($data);
-
-    //     return "Successfylly inserted - User id : " . $newuser->id . "<br> <br>" . "<a href='/list'>Go to list</a>";
-    // }
-
-
-
-    protected $fillable = ['name'];
-
-    public function phone()
+    public function salary()
     {
-        return $this->hasOne(Phone::class);
+        return $this->hasOne(Salary::class);
     }
 }
