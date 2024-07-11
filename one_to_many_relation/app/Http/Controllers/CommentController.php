@@ -53,7 +53,9 @@ class CommentController extends Controller
         $comment4->save();
 
 
-        redirect('/list');
+         redirect('/list');
+
+
     }
 }
 
